@@ -1,10 +1,15 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-nav {
+  background-color: #e0ad9f;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +40,128 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.question-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.question-box {
+    background-color: #F1F7E7;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: calc(100% / 4);
+    margin-bottom: 50px;
+    transition: 0.3s;
+    height: auto;
+    flex-shrink: 0;
+    margin: 20px 5px;
+}
+.question-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+.question-box .author {
+    height: 35%;
+    background: #E2C2B9
+}
+.question-box .author p {
+    padding-right: 45%;
+    padding-top: 2%;
+    font-size: larger;
+    font-family: monospace;
+    color: #F1F7E7;
+}
+.question-box .author img {
+  height: 100px;
+  width: 100px;
+  border: 5px solid #BFD8B8;
+  border-radius: 50%;
+  position: relative;
+  top: -25% 
+}
+.question-box .content {
+  height: 60%;
+  position: relative;
+  top: 25%;
+  right: auto 
+}
+.question-box .contentp {
+  font-weight: bolder;
+
+}
+.question-box .footer {
+  height: 5%;
+  position: relative;
+  top: -10%;
+}
+.question-box .footer .more {
+    border: 2px solid #BFD8B8;
+    padding: 3px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #E2C2B9;
+}
+
+/****** post details *******/
+.post-content {
+  margin-top: 2%;
+  text-align: start;
+}
+.post-content .answer-num {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+  text-decoration: underline;
+  color:#E2C2B9;
+  font-family: cursive;
+  font-size: 20px;
+}
+.post-content .answer-num span {
+  border: 2px solid #e0ad9f;
+  padding: 5px;
+  border-radius: 10px;
+  color: #BFD8B8;
+  font-family: fantasy;
+}
+.post-content hr {
+  width: 70%;
+  color: #e0ad9f;
+}
+.delete {
+  margin-top: -3%;
+  margin-left: 5%;
+}
+.answers{
+  margin-left: 5%;
+    margin-top: 2%;
+    font-size: x-large;
+    border: 1px solid #e0ad9f;
+}
+.symbols {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.symbols a {
+  cursor: pointer;
+}
+.add-answer {
+  margin-left: 10%;
+    margin-top: 5%;
+}
+
+/*** not found****/
+.not-found {
+  margin-top: 10%;
+}
+.not-found h3 {
+  font-size: 100px;
+  font-family: fantasy;
+  color: #e0ad9f;
+}
+.not-found a {
+  font-size: 120%;
+  color:#e0ad9f;
 }
