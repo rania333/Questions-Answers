@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import Image from '../images/default.png';
 export default class Question extends Component {
     render() {
         const {questions} = this.props;
-        console.log(questions)
         return (
             <div className="question-list">
                 {questions.map(question => (
@@ -16,7 +16,7 @@ export default class Question extends Component {
                         <p>{question.title}</p>
                     </div>
                     <div className="footer">
-                        <a href={question.id} className="more">More Details</a>
+                        <NavLink to={"/q/"+question.id} className="more">More Details</NavLink>
                     </div>            
                 </div>
                 ))}
