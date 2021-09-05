@@ -7,6 +7,10 @@ export default class QuestionsList extends Component {
         return (
             <div>
                 <h1> Questions </h1>
+                {/* <div className="add">
+                    <Add handleChange={handleChange} handleSubmit={handleSubmit}
+                    item={item} questions={questions} />
+                </div> */}
                 <Question questions={questions}/>
             </div>
         )

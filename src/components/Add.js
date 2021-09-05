@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Col, Form, Row, Button } from 'react-bootstrap';
 
-
 export default class Add extends Component {
     render() {
         const {handleChange, handleSubmit, item } = this.props;
-        console.log(item);
         return (
             <div>
                 <Form onSubmit={handleSubmit}>

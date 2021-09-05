@@ -32,36 +32,38 @@ handleChange = (e) => {
 handleSubmit = (e) => {
     e.preventDefault();
     let newItem = {
-        id: this.state.questions.length + 1,
+        id: (this.state.questions.length) + 1,
         title: this.state.item,
         name: "rania"
     }
     let updatedItem = [...this.state.questions, newItem];
-    console.log(updatedItem);
-    this.setState({questions:updatedItem});
-    console.log(this.state.questions);
-    return <Redirect to="/" />
-    
+    this.setState({questions:updatedItem, item:""});
 }
-handleDelete = (id) => {
-    const filteredQuestions = this.state.questions.filter(q => q.id !== id);
-    this.setState({
-        questions: filteredQuestions
-    });
+//error
+handleDelete = (e, id) => {
+  e.preventDefault();
+    const filteredQuestions = this.state.questions.filter(q => q.id != id);
+    console.log(filteredQuestions)
+    this.setState({questions: filteredQuestions});
+    console.log(this.state.questions);
+    // return (<Redirect to="/"/>)
 } 
 render() {
+
   return (
     <div className="App">
       <Navbar/>
       <Switch>
         <Route exact path="/" > 
           <QuestionsList handleChange={this.handleChange} handleSubmit={this.handleSubmit}
-          questions={this.state.questions}/> 
+          questions={this.state.questions} item={this.state.item}/> 
         </Route>
         <Route path="/add"> <AddQuestion 
           handleChange={this.handleChange} item={this.state.item} handleSubmit={this.handleSubmit}/>
         </Route>
-        <Route path="/q/:id" children={<PostDetails/>}></Route>
+        <Route path="/q/:id"> 
+          <PostDetails questions={this.state.questions} handleDelete={this.handleDelete}/>
+        </Route>
         <Route path="*" component={NotFound}/>
       </Switch>
     </div>
